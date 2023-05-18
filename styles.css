@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* helps to stack the elements over each other */
+}
+
+#gameboard {
+    width: 300px;
+    height: 300px;
+    background-color: black;
+
+    /* making all the squares of the gameboard wrap over each other*/
+    display: flex;
+    flex-wrap: wrap;
+
+    border: solid 1px saddlebrown;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: antiquewhite;
+    border: solid 2px brown;
+    box-sizing: border-box;
+
+    /* Ensuring everything inside the box is in the center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    border: 15px solid blue;
+    box-sizing: border-box;
+}
+
+.cross {
+    height: 90px;
+    width: 90px;
+    position: relative; /* coz we gonna use 'before' and 'after' */
+
+    /* rotating the + to 45deg so that it is X*/
+    transform: rotate(45deg);
+}
+
+.cross:before, .cross:after {
+    content: "";
+    position: absolute;
+    background-color: red;
+}
+
+.cross:before {
+    left: 50%;
+    width: 30%;
+    margin-left: -15%;
+    height: 100%;
+}
+
+.cross:after {
+    top: 50%;
+    height: 30%;
+    margin-top: -15%;
+    width: 100%;
+}
+
+#info {
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+}
