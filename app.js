@@ -35,7 +35,7 @@ function addGo(e) {
     // creating a div within each square 
     // to place a cross or a cirlce 
     const goDisplay = document.createElement('div')
-    goDisplay.classList.add(go)
+    goDisplay.classList.add(go)     // game always starts with a circle
     e.target.append(goDisplay)
 
     // alternating b/w circle and cross
