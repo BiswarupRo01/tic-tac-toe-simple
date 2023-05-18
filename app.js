@@ -8,6 +8,9 @@ const   startCells = [
     "", "", ""
 ]
 
+var movements = 0
+var wins = false
+
 let go = "circle"
 infoDisplay.textContent = "Circle goes first"
 
@@ -32,6 +35,9 @@ createBoard()
 // this function will add either a circle 
 // or a cross if nothing is there
 function addGo(e) {
+    // square clicked means movement happened 
+    movements++;
+
     // creating a div within each square 
     // to place a cross or a cirlce 
     const goDisplay = document.createElement('div')
@@ -47,6 +53,12 @@ function addGo(e) {
 
     // finally, we check the scores
     checkScore()
+
+    // checking if there's a stalement scenario
+    if (movements === 9) {
+        if (!(wins))  // all movements done, but there's still no win
+            infoDisplay.textContent = "Match Drawn ..."
+    }
 }
 
 function checkScore() {
@@ -68,6 +80,7 @@ function checkScore() {
 
         if (circleWins) {
             infoDisplay.textContent = "Circle Wins!"
+            wins = true
             
             // removing click-events from all squares
             // Note: We can't directly remove event-listeners from all
@@ -88,6 +101,7 @@ function checkScore() {
 
         if (crossWins) {
             infoDisplay.textContent = "Cross Wins!"
+            wins = true
             
             // removing click-events from all squares
             // Note: We can't directly remove event-listeners from all
