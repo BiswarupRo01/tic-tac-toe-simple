@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Reem+Kufi+Fun:wght@700&display=swap');
 
 body {
     margin: 0;
@@ -8,6 +8,13 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column; /* helps to stack the elements over each other */
+}
+
+.heading {
+    top: 300vh;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    font-size: 60px;
+    color: saddlebrown;
 }
 
 #gameboard {
@@ -75,4 +82,5 @@ body {
 #info {
     font-size: 50px;
     font-family: 'Poppins', sans-serif;
+    color: rgb(82, 34, 0);
 }
